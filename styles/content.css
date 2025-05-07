@@ -1,0 +1,75 @@
+.shake {
+  animation: shakeCart 0.4s ease-in-out forwards;
+}
+
+@keyframes xAxis {
+  100% {
+    transform: translateX(calc(50vw - 105px));
+  }
+}
+@keyframes yAxis {
+  100% {
+    transform: translateY(calc(-50vh + 75px));
+  }
+}
+@keyframes shakeCart {
+  25% {
+    transform: translateX(6px);
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@font-face {
+  font-family: "made_tommy_softbold";
+  src: url("chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_bold_personal_use-webfont.woff2")
+      format("woff2"),
+    url("chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_bold_personal_use-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+input.form-check-input.radio:checked {
+  border-color: #e61f25 !important;
+  background-color: #e61f25 !important;
+}
+
+@font-face {
+  font-family: "made_tommy_softmedium";
+  src: url("chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_medium_personal_use-webfont.woff2")
+      format("woff2"),
+    url("chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_medium_personal_use-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "made_tommy_softlight";
+  src: url("chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_light_personal_use-webfont.woff2")
+      format("woff2"),
+    url("chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_light_personal_use-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "made_tommy_softregular";
+  src: url("chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_regular_personal_use-webfont.woff2")
+      format("woff2"),
+    url("chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_regular_personal_use-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+#modalPilih {
+  font-family: "made_tommy_softmedium";
+}

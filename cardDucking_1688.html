@@ -1,0 +1,178 @@
+<style>
+  button,
+  .form-control:focus {
+    box-shadow: inset 0 -1px 0 #ddd;
+  }
+</style>
+<div style="position: relative;margin-top: 30px;">
+  <div class="card border-dark" style="border-radius: 5px!important;">
+    <div class="card-body" style="padding: 10px;">
+      <!-- alert -->
+      <div style="display: none" id="duckingAlert">
+      </div>
+    
+        <div style="float: left;width:70%">
+          <div class="card border-dark" id="duckingCard" style="border-radius: 3px;width: 35%;">
+            <div class="card-body text-center" style="padding: 10px;" id="hoverIsLogin">
+              <div style="float:left; width:50%" id="data-logo">
+
+                <img src="https://ducking.id/assets/upload/img/C2UufuW03l2YQmqbJzBWWpqqAqjtCicDZk9fYNam.png"
+                  alt="ducking" style="
+                  max-width: 55px;
+                  vertical-align: -webkit-baseline-middle;
+                  " border="0" />
+              </div>
+              <div style="float:left;width:50%" id="data-member">
+
+                <div id="member" class="text-white " style="
+                    display: none;
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: normal;
+                    background-color: #F4C04F !important;
+                    margin-bottom: 1px;
+                    /* text-transform: uppercase; */
+                  ">
+                </div>
+                <div id="marking" class="text-white " style="
+                    display: none;
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: normal;
+                    background-color: #F4C04F !important;
+                  ">
+                </div>
+              </div>
+              <div style="float:left;width:37.5%" id="data-login">
+              
+              
+                <!-- logout -->
+                <a href="https://duckingdelivery.com" target="_blank" style="display: none;font-size: 16px"
+                  class="text-dark" id="home">
+                  <i class="fas fa-home"></i>
+                </a>
+                <a href="https://duckingdelivery.com/customer/dashboard" target="_blank"
+                  style="display: none;font-size: 16px" class="text-dark" id="user">
+                  <i class="fas fa-user-alt"></i>
+                </a>
+                <a href="javascript:;" style="display: none;font-size: 16px" class="text-dark" id="logout-btn">
+                  <i class="fas fa-sign-out-alt"></i>
+                </a>
+                <button type="button" class="btn btn-sm text-white"
+                  style="padding: 5px 7px;font-size: 12px;line-height: normal;background-color: #F4C04F !important;border-radius: 3px;"
+                  id="loginBox"> Login </button>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+        <div  style="float: left;width:30%" class=" d-flex justify-content-end align-self-center">
+          <button type="button" id="listCart" class="position-relative" style="color:#3C3C3C;border:none;"><i
+              class="fas fa-cart-arrow-down" style="font-size: 20px; cursor: pointer"></i>
+            <span
+              class="position-absolute top-0 start-100 translate-middle bg-danger border border-light rounded-circle"
+              id="hasItem" style="display: none;padding: 4px;">
+              <span class="visually-hidden">Items</span>
+            </span></button>
+          <a href="javascript:;" style="color:#3C3C3C"><i class="fas fa-language"
+              style="font-size: 20px; cursor: pointer; margin-left: 10px" id="language"></i></a>
+        </div>
+        <div class="clearfix"></div>
+    
+      <div class="cart-panel d-flex justify-content-center" style="padding: 15px 25px;">
+        <div class="left" style="float:left; width:90%">
+          <div class="h-100">
+            <div class="cart-panel-head text-center"
+              style="background-color: #F4C04F !important;color:#fff;border-top-left-radius: 5px;font-size: 18px;font-weight: bold;padding: 5px;border-right: 1px solid #fff;">
+              <span id="idrPrice">Rp 0,-</span>
+              <div id="multiPrice">
+                <div class="first" style="float:left;width:30%">
+                  <span id="firstPrice">Rp 0,-</span>
+                </div>
+                <div class="second" style="float:left;width:40%">
+                  <span id="secondPrice">Rp 0,-</span>
+                </div>
+                <div class="last" style="float:left;width:30%">
+                  <span id="lastPrice">Rp 0,-</span>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+            <div class="cart-panel-body text-center"
+              style="border-left: 1px solid #F4C04F;border-bottom: 1px solid #F4C04F; border-bottom-left-radius: 5px;font-weight: bold;">
+              <div id="singleUnitDucking">
+
+                <span id="unitDucking"></span> Pcs
+              </div>
+              <div id="multiUnitDucking">
+                <div class="first" style="float:left;width:30%">
+                  <span id="firstUnitDucking"></span> Pcs
+                </div>
+                <div class="second" style="float:left;width:40%">
+                  <span id="secondUnitDucking"></span> Pcs
+                </div>
+                <div class="last" style="float:left;width:30%">
+                  <span id="lastUnitDucking"></span> Pcs
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right"
+          style="float: right;width:10%;background-color: #F4C04F !important;border-top-right-radius: 5px;position: relative;border-bottom-right-radius: 5px;padding:5px">
+
+          <button type="button" id="addToCartLoading" class="text-white"
+            style="margin: 0;position: absolute;top: 50%;border: 0;background: none;-ms-transform: translateY(-50%);left: 0;transform: translateY(-50%) translateX(10px);display: none;"><i
+              class="fa fa-spinner fa-spin" style="font-size: 25px;cursor: pointer;vertical-align: text-top;"></i></button>
+          <button type="button" id="addToCart" class="text-white"
+            style="margin: 0;position: absolute;top: 50%;border: 0;background: none;-ms-transform: translateY(-50%);left: 0;transform: translateY(-50%) translateX(10px);"><i
+              class="fas fa-cart-plus" style="font-size: 25px;cursor: pointer;vertical-align: text-top;"></i></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- login -->
+
+  <div class="card border-dark mx-auto" id="loginDuckingBox"
+    style="position: absolute;width: 385px;border-radius: 10px;top: -45px;right: 130px;z-index: 9999;display: none;">
+    <div class="card-body" style="padding: 15px;">
+      <!-- close button -->
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn-close" id="closeLoginBox"></button>
+      </div>
+      <div class="text-center" style="color: #F4C04F !important">
+        <h1 class="m-0" style="font-size: 40px;font-weight: 700;padding-bottom: 16px;">Login</h1>
+      </div>
+      <form id="login-form">
+        <div style="margin-bottom: 16px;">
+          <input type="email" class="form-control"
+            style="margin: 0;font-size: 14px;padding: 6px 12px;background-color: #f1f1f1;border-radius: 5px;"
+            placeholder="Email" id="inputEmail" />
+        </div>
+        <div style="margin-bottom: 16px;">
+          <input type="password" class="form-control"
+            style="margin: 0;font-size: 14px;padding: 6px 12px;background-color: #f1f1f1;border-radius: 5px;"
+            autocomplete="off" placeholder="Password" id="inputPassword" />
+        </div>
+        <button type="button" class="btn text-white fw-bold" id="login-btn"
+          style="background-color: #F4C04F !important;font-size: 16px;padding: 6px 12px;border-radius: 5px;">
+          Login
+        </button>
+      </form>
+
+      <div style="margin-top:10px;margin-bottom:10px">
+        <a href="https://duckingdelivery.com/customer/login#lupaPassword" target="_blank"
+          class="text-decoration-none fw-bold d-block"><small style="color: #F4C04F !important">Lupa
+            Password?</small></a>
+      </div>
+      <div style="margin-bottom: 16px;">
+        <span>Belum punya akun?</span>
+        <a href="https://duckingdelivery.com/customer/daftar" target="_blank" class="fw-bold" target="_blank"
+          style="color: #F4C04F !important; font-size: 14px">Daftar</a>
+      </div>
+    </div>
+  </div>
+</div>
