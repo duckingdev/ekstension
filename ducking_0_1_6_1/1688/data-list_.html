@@ -1,0 +1,393 @@
+<style>
+  .container,
+  .container-fluid,
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    --bs-gutter-x: 24px;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (min-width: 576px) {
+
+    .container-sm,
+    .container {
+      max-width: 540px;
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    .container-md,
+    .container-sm,
+    .container {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: 992px) {
+
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+      max-width: 1140px;
+    }
+  }
+
+  @media (min-width: 1400px) {
+
+    .container-xxl,
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+      max-width: 1320px;
+    }
+  }
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .btn {
+    box-shadow: none;
+  }
+
+  .loading {
+    background-image: linear-gradient(90deg, rgb(216, 215, 215), #f8f8f8);
+    background-size: 1000%;
+    background-position: right;
+    border-radius: 5px;
+    width: 150px;
+    height: 15px;
+    animation: sweep 2s ease-in-out infinite alternate;
+    box-shadow: 0 0 6px 0 #a3a3a331;
+  }
+
+  @keyframes sweep {
+    0% {
+      background-position: right;
+    }
+
+    100% {
+      background-position: left;
+    }
+  }
+
+  input.form-check-input:checked,
+  input.form-check-input:indeterminate {
+    border-color: #f4794f !important;
+    background-color: #f4794f !important;
+  }
+
+  .swal2-container.swal2-center.swal2-backdrop-show {
+    z-index: 9999999999;
+  }
+  .px-2 {
+    padding-right: 8px !important;
+    padding-left: 8px !important;
+  }
+
+  .py-2 {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  .mb-2 {
+    margin-bottom: 8px !important;
+  }
+
+  input.form-check-input:checked,
+  input.form-check-input:indeterminate {
+    border-color: #f4794f !important;
+    background-color: #f4794f !important;
+  }
+
+  .row {
+    --bs-gutter-x: 24px !important;
+  }
+
+  .rounded {
+    border-radius: 6px !important;
+  }
+
+  .row>* {
+    padding-right: calc(24px * 0.5);
+    padding-left: calc(24px * 0.5);
+  }
+  .py-3 {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+.form-check {
+    display: block;
+    min-height: 24px;
+    padding-left:24px;
+    margin-bottom:2px;
+}
+.ps-2 {
+    padding-left: 8px !important;
+}
+input#pengiriman1:focus,input#pengiriman2:focus,.btn-close:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+.my-3 {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+}
+.form-label {
+    margin-bottom: 8px;
+}
+.form-control {
+    font-size: 16px;
+    padding: 6px 16px;
+    border-width: 1px;
+    border-radius: 6px;
+}
+@font-face {
+  font-family: 'made_tommy_softmedium';
+  src: url('chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_medium_personal_use-webfont.woff2') format('woff2'),
+       url('chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_medium_personal_use-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'made_tommy_softlight';
+  src: url('chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_light_personal_use-webfont.woff2') format('woff2'),
+       url('chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_light_personal_use-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'made_tommy_softregular';
+  src: url('chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_regular_personal_use-webfont.woff2') format('woff2'),
+       url('chrome-extension://__MSG_@@extension_id__/styles/fonts/made_tommy_soft_regular_personal_use-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+#modalPilih{
+  font-family: "made_tommy_softmedium" ;
+}
+input.form-check-input.radio:checked {
+  border-color: #e61f25 !important;
+  background-color: #e61f25 !important;
+}
+
+</style>
+<div id="overlay" style="position: fixed; /* Sit on top of the page content */
+display: none; /* Hidden by default */
+width: 100%; /* Full width (cover the whole page) */
+height: 100%; /* Full height (cover the whole page) */
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+z-index: 999999999; /* Specify a stack order in case you're using a different order for other elements */
+cursor: pointer; /* Add a pointer on hover */"></div>
+<div class="modal fade" id="modalListPembelian"  tabindex="-1" style="z-index: 999999997"
+  aria-labelledby="modalListPembelianLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content" style="background: rgb(248, 248, 248);" style="padding-right:15px">
+      <div id="header-modal" style="padding: 15px 15px 0 15px; margin-right: 17px;"
+        class="modal-header container border-0 mx-auto d-block">
+        <span style="float: left;width: 98%; font-size: 20px">List Pembelian</span>
+
+        <button style="margin-right: 0;border: 0;" type="button" style="float: right" class="btn-close shadow-none p-0"
+          data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="clearfix"></div>
+        <div
+          style="border-bottom: 1px solid #55555536;padding:16px 40px;border-radius:5px;box-shadow: rgba(0, 0, 0, 0.075) 0px 0.125rem 0.5rem !important;"
+          class="bg-white">
+          <div style="float: left;width:8%;">
+            <span>Seller</span>
+          </div>
+          <div style="float:left;width:92%">
+            <div style="float:left;width:27%" class="text-center">
+              <span>Keterangan 1</span>
+            </div>
+            <div style="float:left;width:27%" class="text-center">
+              <span>Keterangan 2</span>
+            </div>
+            <div style="float:left;width:16%" class="text-center">
+              <span>Qty</span>
+            </div>
+            <div style="float:left;width:5%;visibility: hidden;" class="text-center">
+              .
+            </div>
+            <div style="float:left;width:10%;padding-right:14px" class="text-end">
+              <span>Harga</span>
+            </div>
+            <div style="float:left;width:10%" class="text-end">
+              <span>Total Harga</span>
+            </div>
+            <div style="float:left;width:5%;visibility: hidden;" class="text-end">
+              .
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="modal-body container mx-auto" style="padding: 15px">
+        <div id="loading" class="bg-white" style="padding:10px;">
+          <div class="webload loading" style="width: 100%;height: 33px;margin-bottom: 10px;"></div>
+          <div class="sellerload loading" style="width: 20%;height: 25px;margin-bottom: 10px;"></div>
+          <div class="productload loading" style="width: 70%;;margin-bottom: 20px;"></div>
+          <div class="webload loading" style="width: 100%;height: 33px;margin-bottom: 10px;"></div>
+          <div class="sellerload loading" style="width: 20%;height: 25px;margin-bottom: 10px;"></div>
+          <div class="productload loading" style="width: 70%;;margin-bottom: 20px;"></div>
+          <div class="webload loading" style="width: 100%;height: 33px;margin-bottom: 10px;"></div>
+          <div class="sellerload loading" style="width: 20%;height: 25px;margin-bottom: 10px;"></div>
+          <div class="productload loading" style="width: 70%;;margin-bottom: 20px;"></div>
+        </div>
+        <div id="cardList">
+        </div>
+      </div>
+      <div class="modal-footer border-0 container d-flex" style="padding: 12px">
+        <div style="float:left;width: 90%;padding: 12px;border-radius: 5px;background-color: #F4C04F;" class="bg-warning m-0">
+
+          <div style="float: left;width: 33.3%;font-size:16px;" class="p-0 m-0">
+            <div>
+              <input class="form-check-input shadow-none" style="vertical-align: baseline;" type="checkbox" value=""
+                id="checkAll" disabled>
+              <label class="form-check-label" for="flexCheckDefault">
+                Pilih semua
+              </label>
+              <span id="customDelete" style="display: none;" class="m-0">
+                <button type="button" class="btn p-0" style="font-size: 14px;border-radius: 5px;margin-right: 5px;"
+                  id="deleteSelected">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+          <div style="float: left;width: 33.3%;font-size:16px;font-weight: bold;" class="p-0 m-0">
+            <span>
+              QTY <span class="qty">0</span>
+            </span>
+          </div>
+          <div style="float: left;width: 33.3%;font-size:16px;font-weight: bold;" class="p-0 m-0">
+            <span>
+              Total harga ¥ <span class="total-harga">0</span>
+            </span>
+          </div>
+        </div>
+        <div style="float: right;width: 10%;" class="p-0 m-0 d-flex justify-content-end">
+
+          <div style="margin-right: 8px !important" class="m-0">
+          </div>
+          <button type="button" id="export-excel" style="font-size: 16px; border-radius: 5px" class="btn m-0 p-0">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalPilih" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" style="z-index: 999999999"
+  aria-labelledby="modalListPembelianLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content mx-auto" style="border-radius: 10px !important;max-width: 380px;" style="padding-right:15px">
+      <div id="header-modal" style="padding: 15px 15px 0 15px; margin-right: 17px;"
+        class="modal-header container border-0 mx-auto d-block text-end">
+        <button id="hideCloseModalPilih" data-bs-dismiss="modal" aria-label="Close" style="display:none"></button>
+        <button style="margin-right: 0;border: 0;" type="button" style="float: right" class="btn-close shadow-none p-0"id="close-modalpilih"></button>
+        <div class="clearfix"></div>
+
+      </div>
+      <div class="modal-body container" style="padding: 16px">
+        <div>
+          <h1 class="" style="font-size: 25px;color: #F4C04F;font-family: made_tommy_softbold;">Pilih Pengiriman :</h1>
+          <div style="margin-top: 6px;">
+
+            <div class="">
+              <input class="form-check-input radio shadow-none" style="width: 17px; height: 17px;" type="radio" name="pengiriman" value="Sea" id="pengiriman1" checked>
+              <label class="form-check-label" for="pengiriman1" style="vertical-align: sub;font-size: 16px;padding-left: 8px;font-family: made_tommy_softmedium;">
+                Sea
+              </label>
+            </div>
+            <div class="">
+              <input class="form-check-input radio shadow-none" style="width: 17px; height: 17px;" type="radio" value="Air" name="pengiriman" id="pengiriman2">
+              <label class="form-check-label" for="pengiriman1" style="vertical-align: sub;font-size: 16px;padding-left: 8px;font-family: made_tommy_softmedium;" for="pengiriman2">
+                Air
+              </label>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 12px;margin-bottom: 12px;">
+          <div><span class="" style="font-size: 25px;color: #F4C04F;font-family: made_tommy_softbold;">Kode Voucher :</span> </div>
+          <input class="form-control border-0 p-0" type="text" name="kode_voucher" placeholder="(Opsional)" style="background-color: #f5f5f5;font-size: 16px;border-radius: 5px;padding: 6px 10px !important;margin-top: 6px;font-family: made_tommy_softregular;">
+        </div>
+        <div class="text-end " style="margin-top: 30px;">
+          <button class="btn text-white" id="submit-excel" style="background:#F4C04F;font-size: 16px;padding: 4px 17px;border-radius: 5px;font-family: made_tommy_softmedium;">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalPilihSuccess" tabindex="-1" style="z-index: 999999999"
+  aria-labelledby="modalPilihLabel" data-bs-backdrop="static" data-bs-keyboard="false" >
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content mx-auto" style="border-radius: 10px !important;width: 410px;">
+      <div class="modal-body container" style="padding: 16px">
+        <div class="text-center">
+          <div class="rounded " style="font-family: 'made_tommy_softmedium';">
+            <button type="button" style="display: none;" data-bs-dismiss="modal" id="hideCloseModalPilihSuccess"
+              aria-label="Close"></button>
+            <button type="button" style="float: right;" class="btn-close" id="close-modalpilihsuccess"></button>
+            <div class="clearfix"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="text-success" width="52" height="52" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+            </svg>
+            <div class="text-success" style="font-size:16px">
+              <strong>Berhasil</strong>
+            </div>
+            <div style="padding:16px 0">
+              <div style="font-size: 16px; margin-bottom: 8px;">
+                Data berhasil disubmit ke daftar pembelian anda.
+              </div>
+              <div style="margin-top: 48px;">
+                <a href="https://duckingdelivery.com/customer/purchase"  target="_BLANK" class="btn  text-white text-decoration-none fw-bold" style="padding: 6px 12px;border-radius: 5px;font-size: 16px;font-family: 'made_tommy_softregular';background:#F4C04F;" st>
+                  Lihat Daftar Pembelian
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
